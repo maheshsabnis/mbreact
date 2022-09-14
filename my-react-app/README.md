@@ -8,6 +8,7 @@
         -     https://www.webnethelper.com/2021/10/reactjs17x-creating-application-with.html
     - Creating a Project using create-react-app
         - create-react-app [PROJECT-NAME]    
+        - npx create-react-app my-app --template typescript
 2. Concepts
     - Component
         - w3c concept of 'WebComponent'
@@ -149,3 +150,64 @@ root.render(
 ````
         - 1. Detect the HTML element with 'id' as 'root' from 'index.html' asn this element will be used to MOUNT the React Component on it
         - 2. Render the React component named 'App' on the browser by mounting it on 'root' element
+
+4. Programming with React
+    - Creating a Component with State
+        - Defining State Properties
+        - Defining Binding of State properties with HTML UI Elements
+        - Working with Events
+        - Defining a Composable UI using Parent Child Relationships across Components
+            - Stretegies of passing data across Components
+    - JavaScript XML Extensions aka JSX
+        - This is a Compiler that re-written the HTML DOM those are encapsulated by React Component
+```` html
+       <input className=""/> 
+````
+        - Do not use 'class' instead use 'className', the 'class' is JavaSript/TyueSpcript standard keyword
+        - The HTML element MUST have closing tag, else the component will crash while mounting in browser
+        - use the ES 6 expression syntax '{}' to bind 'state property' or 'props property' wuith HTML element as well as the componen's method to HTML elements' event
+
+```` javascript
+import {useState} from 'react';
+import './App.css';
+
+
+function App() {
+  // lets define a 'state' using 'useState'
+
+  const [x, setX] = useState(0);
+
+
+  return (
+    <div className="App">
+        <h1>The First Component</h1> `` 
+    </div>
+  );
+}
+
+export default App;
+
+
+(alias) useState<number>(initialState: number | (() => number)): [number, React.Dispatch<React.SetStateAction<number>>] (+1 overload)
+
+````
+        - const [x,setX] = useState(0);
+            - The 'x' is a state property for the component
+            - The '0' is an initial value of 'x'
+            - The 'setX', this is a method that will be sued to update the initial value of 'x' to next value
+                - React.Dispatch    
+                     - This will dispatch an event on UI that will be responsible to update 'x'
+                - React.SetStateAction<number>
+                     - This is the execution or invokation for 'setX' that will update an initial state of 'x' to next value   
+
+    - Using Forms
+    - Ajax Calls
+    - Testing 
+6. Project Strcture
+    - The 'components' folder
+        - This will have all components
+    - The 'models' folder
+        - This will hae all model or data classes
+    - The 'services' or 'utilities' folder
+        - This will have logic for external HTTP calls
+        - Front-End Business Logic                
