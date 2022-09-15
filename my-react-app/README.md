@@ -211,3 +211,30 @@ export default App;
     - The 'services' or 'utilities' folder
         - This will have logic for external HTTP calls
         - Front-End Business Logic                
+7. React Compositional Nature        
+    - Component
+        - Parent-Child Relationships
+    -  Data Communication Strategies
+        - Using 'props' to pass data from Parent COmponent to Child Component
+        - This is React's Immutable  object that is used to dynamically create an object with properties added in it
+            - props.children
+                - Used to read values of properties defined for the props object    
+        - Using the 'React.Context' object
+            - The 'createContext()'
+                - This is used to create a Global Object which contains schema for data that can be used across react components on Demend based on 'Provider' and 'Consumer' relationships      
+                - The Sender and Receiver MUST subscribe to context
+                    - The Sender 'Provide' the 'value' to Receiver
+                    - The Receiver 'Consume' the 'value' which is present in the Global Object
+                - The 'Provider' has the 'value' as a Complex JavaScript object. This can contains 'object-of-objects' as a data in it
+                    - e.g.
+```` html
+     <Context.Provider value={{}}></Context./Provider>
+````
+                - the 'value' is not contains object-of-objects, which may be properties and/or callback methods to be used across Provider abd Consumer
+    - Make a wise decision for creating Re-Usable Components based on following possible cases 
+        - If the Same UI with Different data is occuring in same or mutiple components across React Application
+        - Planning for Re-Usable Component
+            - Decide what standard HTML Element(s) are required in UI
+            - Decide the strategy of passing data from Parent component to this re-usable component            
+            - Decide when the child component will emit data to parent component 
+            

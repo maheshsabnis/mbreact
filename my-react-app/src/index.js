@@ -5,14 +5,17 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import components
 import App from './App';
 import FirstComponent from './components/firstcomponent/firstcomponent';
-
+import ParentComponent from './components/parentchild/parentcomponent';
+import EmployeeComponent from './components/employeecomponent/employeecomponent';
+import EmployeeContextComponent from './components/employeecontextcomponent/employeecontextcomponent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const message = "I am from ROOT";
 root.render(
   <React.StrictMode>
     {/* Component Mounting */}
-    <FirstComponent />
+    <EmployeeContextComponent/>
   </React.StrictMode>
 );
 
