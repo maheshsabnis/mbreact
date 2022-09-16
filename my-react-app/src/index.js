@@ -9,6 +9,7 @@ import ParentComponent from './components/parentchild/parentcomponent';
 import EmployeeComponent from './components/employeecomponent/employeecomponent';
 import EmployeeContextComponent from './components/employeecontextcomponent/employeecontextcomponent';
 import ToggleComponent from './components/lifecyclecomponent/togglecomponent';
+import UseEffectAjaxEmployeeComponent from './components/useeffectajaxcomponent/ajaxcomponent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +17,7 @@ const message = "I am from ROOT";
 root.render(
   <React.StrictMode>
     {/* Component Mounting */}
-    <ToggleComponent/>
+    <UseEffectAjaxEmployeeComponent/>
   </React.StrictMode>
 );
 

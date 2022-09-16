@@ -19,4 +19,8 @@
     - MAke sure that the HTML for the RadioButtonList will be generated when the data is available on the Context provided to it from its parent
 
 
+4. Perform CRUD operations with Employee API COntroller using the React Application. 
+    - Modify the EMployee API Controller for Searching EMployees based on EmpName and Designation
+    - Modify the EMployeeComponent by adding a Textbox above the HTML Table that is showing the Emoployees data. When the thios textbox is either entred with EMpName or Designation, the call MUST be made to Employee API and retrived only matching employees those are in the Table. 
+
     

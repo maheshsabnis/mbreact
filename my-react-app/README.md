@@ -272,6 +272,34 @@ export default App;
     - The [], is the DepednencyList which is used by React to collect the current state of each 'state' propoerty of the component.
     - If the logic or execution  of useEffect() causing the 'state' property to update to new value then the useEffect() execution MUST stop and it MUST come-ot from the useEffct() block
     - If this parameter is not poassed then the useEffect() will continue execution and will result into the overhead for state updates on the UI thread
-    - Although the state is updated, since there is not change into the earlier state during the first execution of the useEffect(), the 'shouldComponentUpdate()' will return false and hence the DOM will remain as it is.          
+    - Although the state is updated, since there is not change into the earlier state during the first execution of the useEffect(), the 'shouldComponentUpdate()' will return false and hence the DOM will remain as it is.  
+- Making AJAX Calls to REST APIs from React App
+    - The 'Promise' object
+        - Promise().then().catch();
+            - Promise()
+                - Initiate the Call
+            - then()
+                - Executed if the call is successful
+            - catch()
+                - Executed if the call fails
+        - The First Promise can return result as other promise 
+            - Chain of Promises
+                - Promise().then().then().then()......catch();  
+        - If making multiple promise based calls
+            - Promise.all([ARRAY-OF-PROMISES]).then()                     
+    - Use Promise Based Library
+        - The 'fetch()' object, written by Mozilla in ES 6
+        - The 'axios' Library based on Promises
+            - get():Promise<T> of AxiosResponse<T>
+            - post():Promise<T> of AxiosResponse<T
+            - put():Promise<T> of AxiosResponse<T
+            - delete():Promise<T> of AxiosResponse<T
+                - AxiosResponse<T>
+                    - The Promise Object
+                    - The 'T' is the data responded by the service
+            - npm install --local axios  
+   - In ES 6, its is recommended that use async/await is the method returns the 'Promise' object          
+              
+
 
             
