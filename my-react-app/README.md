@@ -237,4 +237,41 @@ export default App;
             - Decide what standard HTML Element(s) are required in UI
             - Decide the strategy of passing data from Parent component to this re-usable component            
             - Decide when the child component will emit data to parent component 
+- React Lifecycle
+    -  They are internal Events those are resoponsible to manage the behavior of the Component based on
+        - Props Change
+        - State Change
+        - Rendering
+- Lifecycle with Funcational COmponents (Mapping with Class Components)
+    - getInitialProps -- as it is in Functional Components
+    - getInitialState -- Managed using 'useState()' hook with its initial value
+        - e.g.
+            - const [x,setX]= useState(0);
+                - x is a state property with initial value as 0.
+        - Initial State Transition managed using the following hooks
+            - useReducer()
+                - Update the state from Initial-to-New State using State Transition
+            - useRef()             
+                - Directly update the DOM by referring the DOM
+        - createContext() aka React.Context
+            - Provider
+            - Consumer
+    - render() -- managed using return() from funcational component                         
+    - componentDidMount() and componentWillUnMount() are clubed in the 'useEffect()' hook
+        - componentDidMount(), used for heavy-load operations e.g. AJAX calls (aka Promise based called) as well as regisering global events
+        - componentWillUnMount(), cleanup operations e.g. unregistering the global event as well as cleaning the promise object       
+        - useEffect(()=>{initial operatoins; return(()=>{cleanup operations}));
+    - The componentDidUpdate()
+        - This will be managed while the rendering takes place after execution of following hooks
+            - useState()
+            - useReducer()
+            - useRef()
+            - useEffect()    
+    - NOTE: No replacement for 'componentDidCatch()',. we still need the Class component, this is called as ErrorBoundary      
+- useEffect(()=>{... return ()=>{...}}, []);
+    - The [], is the DepednencyList which is used by React to collect the current state of each 'state' propoerty of the component.
+    - If the logic or execution  of useEffect() causing the 'state' property to update to new value then the useEffect() execution MUST stop and it MUST come-ot from the useEffct() block
+    - If this parameter is not poassed then the useEffect() will continue execution and will result into the overhead for state updates on the UI thread
+    - Although the state is updated, since there is not change into the earlier state during the first execution of the useEffect(), the 'shouldComponentUpdate()' will return false and hence the DOM will remain as it is.          
+
             
