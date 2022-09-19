@@ -23,4 +23,7 @@
     - Modify the EMployee API Controller for Searching EMployees based on EmpName and Designation
     - Modify the EMployeeComponent by adding a Textbox above the HTML Table that is showing the Emoployees data. When the thios textbox is either entred with EMpName or Designation, the call MUST be made to Employee API and retrived only matching employees those are in the Table. 
 
-    
+5. Create a ValidationSummaryComponent, with ErrorMessages as input props (or Context) to accept error messages from its parent e.g. EmployeeFormComponent
+    - This component will be shown at the bottom of the EmployeeFormComponent
+    - When an error condition occurres, the error messages MUST be passed to ValdiationSummaryComponent
+    - When the valid value is entered in the EmployeeFormComponent, immediately the corresponding error message should be removed from the ValidationSummaryComponent        

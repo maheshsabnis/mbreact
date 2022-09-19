@@ -299,7 +299,86 @@ export default App;
                     - The 'T' is the data responded by the service
             - npm install --local axios  
    - In ES 6, its is recommended that use async/await is the method returns the 'Promise' object          
+
+    - Working with forms to valiudate use inputs
+        - USe the HTML form tag and each editable element in the form MUST have 'name' attribute
+        - You must write a logic to validate user input
+        - There is no standatrd library for input validations in React.js   
               
+ # Points to be taken in consideration for deploying Applications on Cloud
+ 1. Dffault Benefits
+    - Availablilty and Scalability    
+        - Hardware, Software, and network resources provided by cloud
+        - Scalability Advantages with elasticity
+            - COnfiguiration to manage load increase and decerase based on requests to App  
+ 2. Strategiest to Migrate to cloud
+    - Lift-and-Shift
+        - Take from On-Premised and deploy on Cloud
+            - Local Database to Cloud Database   
+    - Cloud BAsed Application Architecture
+        - Plan for Database Providers and its services
+        - Application Deployment 
+            - Front-End Application Deployment
+                - amplify, static apps
+            - Back-End Application  Deployment
+                - Amplify 
+                - Web Apps
+                - Container Based Apps**
+            - Microservices Based Apps   
+        - Container Based Apps
+            - Applications those are frequently updated based on End-USer's Needs
+                - Application Updates, Tests, and Deployment is time Consuming process, so use the Concept for CI,CD,CT (DevOps Pipeline)
+                    - Continuous Integration (CI)
+                    - Continuous Delivery (CD)
+                    - Continuous Testing (CT)
+            - Divide Apps in small chunks and mange their deployment as an individual components
+                - Components
+                    - Front-End UI Apps
+                    - Server-Side Apps aka Services (REST APIs)
+        - Plan for Containerized App Deployment Env.
+            - Azure
+                - Azure Container Registry (ACR)
+                - Azure Kubernetes Service (AKS)
+            - AWS
+                - Elasic Container Registry (ECR)
+                    - Docker Images Repository that will contains all images to be deployed as back-end apps on AWS EKS
+                - Elastic Kubernetes Service (EKS)
+            - GCP       
+                - GCR
+                - GKS      
+        - Kubernetes aka K8s
+            - IAM Role Configuration that will have access for
+                - Container Registery (ACR, ECR)
+                - Kubernetes Service (AKS, EKS) 
+                - Access to Database
+                    - SQL
+                    - NoSQL
+                - Configuration Access
+                    - Networkign
+                    - VPC Creation
+                    - ... and many more    
+            - Nodes
+                - Virtual Machins (VPc) used for Providing the Storage and running Env. for Apps
+                - Network Subnets
+                    - Public and Private IP Addresses used for Communication Management
+                    - Reserve Ports for Connecting to Services form Other Apps
+                    - Communication Gateways aka Load Balancer     
+            - EKS CLuster Creation Services
+                - CloudFormation
+                    - A Stack that is used to create VPC and Network Subment Groups
+                - Fargate
+                    - Serverless service to create and configure the AWS EKS CLuster             
+
+- Installing App on AWS ECR and EKS
+    - Download and install aws-cli and eksctl
+        - aws-cli is a commandline tool to connect the dev machine to AWS cloud env. for deployment of apps
+            - e.g. Docker Images, AWS Lambda, ect.
+            - https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html
+        - eksctl
+            - Tool to work with EKS Cluster        
+            - https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html     
+
+
 
 
             

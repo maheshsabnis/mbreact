@@ -11,6 +11,7 @@ import EmployeeContextComponent from './components/employeecontextcomponent/empl
 import ToggleComponent from './components/lifecyclecomponent/togglecomponent';
 import UseEffectAjaxEmployeeComponent from './components/useeffectajaxcomponent/ajaxcomponent';
 import SecureCallComponent from './components/securecallcomponent/securecallcomponent';
+import ValidatorComponent from './components/validatorsdemo/validationcomponent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,7 +19,7 @@ const message = "I am from ROOT";
 root.render(
   <React.StrictMode>
     {/* Component Mounting */}
-    <SecureCallComponent/>
+    <ValidatorComponent/>
   </React.StrictMode>
 );
 
