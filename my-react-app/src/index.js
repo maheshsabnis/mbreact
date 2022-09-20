@@ -14,6 +14,16 @@ import SecureCallComponent from './components/securecallcomponent/securecallcomp
 import ValidatorComponent from './components/validatorsdemo/validationcomponent';
 import CustomHookUserComponent from './components/customhooks/cusomhookusercomponent';
 import UseReducerCustomHookComponent from './components/usereducercomponent/statetransitioncomponent';
+import ContainerErrorBoundaryComponent from './components/errorboundaries/usingerrorboundaries';
+import ContainerComponent from './components/errorboundaries/simpleerrorcheckcomponent';
+
+// for Routing
+import {BrowserRouter} from 'react-router-dom';
+import MainRoutingComponent from './components/routingapp/mainroutingcomponent';
+// For Testing
+
+import HelloTestComponent from './components/componentfortest/HelloTestComponenty';
+import EventTestComponent from './components/componentfortest/eventtestcomponent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +31,10 @@ const message = "I am from ROOT";
 root.render(
   <React.StrictMode>
     {/* Component Mounting */}
-    <UseReducerCustomHookComponent/>
+    {/* <BrowserRouter>
+     <MainRoutingComponent></MainRoutingComponent>
+    </BrowserRouter> */}
+    <EventTestComponent></EventTestComponent>
   </React.StrictMode>
 );
 

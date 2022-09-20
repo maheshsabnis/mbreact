@@ -416,12 +416,96 @@ export default App;
                         - the 'payload' parameter is also used for action that represents the data which is to be updated in the state    
 
 2. Error Boundaries
-    - Error Handlign
+    - Error Handling
     - Still use the Class Component
+        - create a global error handler
+    - Create an ErrorBoundary Component that will manage the Lifecycle of each child-component so that if any chiold compnent throws an exception, then it will be cought, advantage is that we need not to create fallback ui for each child component
+        - Create a class component that will implement the 'componentDidCatch()' method to listen to error thrown by any child component
+
+        - implement the 'getDerivedStateFromError()' method that will listen to the error received from child component and update the state of the Error Boundary component 
+
 3. Code Splitting and Lazy Loading
     - Peformance
 4. Routing
     - Single Page Applciation
+    - react-router-dom
+    - npm install --local react-router-dom
+    - BrowserRouter
+        - Create a 'Context.Provider' to manage the Routing
+        - Mount following object for routing on DOM in browser
+            - Router Table
+            - Route Parameters
+            - Components
+    - Routes
+        - Used to define route table where ench entry is 'Route' object
+    - Route
+        - define route URLs and component to route to
+        - Properties
+            - path: the URL
+            - index property, this is applied on the Route that define an element that is loaded as defult element when the routing starts
+            - element: the Component to Navigate to
+    - Link
+        - Provides a Query to Routes table so that the component is loaded for routing
+        - The 'to' property that will be used to query to route table and ask the route table to mount the component bt matching the value of 'to' property  with route table 'path' property of the 'Route'  
+    - Outlet
+        - USed to Mount component in routing on DOM so that it will be rendered
+    - The 'useNavigate()' hook
+        - This is used to perform explict navigation to Route   
+    - The  'useParams()' hook
+        - This is used for reading the Query parameters in Routing     
+    - Create MainRoutingComponent that contains the Route Table using Routes
+    - Create LayoutComponent that will manage the Routing and Outlet (Mounting of Components)
+    - Create a NotFoundCompopnent that will be loaded when route goes wrong          
+
+
+5. PureComponent
+    - The class component uses  'Component<P,S>' class
+        - This base class contains the shouldComponentUpdate() that is executed for each propschange and statechange. This is cost
+        - PureComponent will avoid frequent execution  of  shouldComponentUpdate()
+6. Highr-Order-Component (HoC)
+    - It is a function that accepts component as input parameter and return component
+    - It is a Pure Function
+    - It is not a class but it is a pattern
+    - e.g.
+```` javascript
+      function Hoc(Component, properties){
+          // Other logic to modify the input 'Component' to OPutput 'Component' 
+         return (<Component {...properties}/>)
+      }
+````
+7. JS Testing was always challanging
+    - Browser based JS Testing Libraries
+        - qUnit
+            - Writen by jQuery            
+        - Jasmine
+            - JS Object to Test JS Code
+    - Engine
+        - Karma By Google
+            - V8 Engine aka chromium engine to execute JS Tests in-side browser (Chrome*, IE, FireFox, etc.) as well as out-side browser             
+    - Browserless Testing
+        - Loads the DOM in V8 engine (similar engine used by browser e.g. Spider for FireFox) and loads JS Test file in it and test them
+        - Karma Browserless Testing with Jasmine
+        - Enzyme, by Air-BnB, well suted for React Apps upto React 16
+        - Jest, by Open Source Community for
+            - Angular
+            - React
+            - Vue
+            - ... an many more JS Libs and Frwks
+        - Jest start the Im-Memory DOM Creation for Testing then UI
+    - React-Scripts + Jest
+        - executes all 'xxxx.test.js' as well as 'xxxx.spec.js' in entire application
+    - Testing Strategious
+        - Write Test for the DOM with and withiut data
+        - Write Test for JS Event Object executed by React 
+    - The Test Structure
+        - Test Suite
+            - describe()               
+        - Common Object those are required by all test cases
+            - beforeEach()
+        - The Test case aka Test Method
+            - it()        
+        - Cleanup operation after each Test Case
+            - afterEach()    
 
 
 
