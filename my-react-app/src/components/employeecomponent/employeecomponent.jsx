@@ -22,6 +22,7 @@ const EmployeeComponent=(props)=>{
 
     const getSelectedEmp=(e)=>{
         setEmp(e);
+       
     }
 
 

@@ -12,6 +12,8 @@ import ToggleComponent from './components/lifecyclecomponent/togglecomponent';
 import UseEffectAjaxEmployeeComponent from './components/useeffectajaxcomponent/ajaxcomponent';
 import SecureCallComponent from './components/securecallcomponent/securecallcomponent';
 import ValidatorComponent from './components/validatorsdemo/validationcomponent';
+import CustomHookUserComponent from './components/customhooks/cusomhookusercomponent';
+import UseReducerCustomHookComponent from './components/usereducercomponent/statetransitioncomponent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +21,7 @@ const message = "I am from ROOT";
 root.render(
   <React.StrictMode>
     {/* Component Mounting */}
-    <ValidatorComponent/>
+    <UseReducerCustomHookComponent/>
   </React.StrictMode>
 );
 

@@ -378,6 +378,50 @@ export default App;
             - Tool to work with EKS Cluster        
             - https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html     
 
+# React Advanced Features
+1. Custom Hooks
+    - Creating Re-Usable Functional Objects those will be executed at Functional Component Level to provide common fucntoinalities across all components
+    - Need?
+        - Using standard hook in an encapsulation with the custom logic assiciated with it
+        - e.g.
+            -  Create a reusable Hook, that will accept a URL with header values e.g. Content-Type, AUTHORIZATION, etc. and will make call to REST APIs and will receive data for the component
+        - Performing State-Transition with 'state' property updates in Stages, e.g. Initial Value-to-Next-Value-to-Final Value or Error-Value
+            - useReducer() a hook that can be used as an alternative to useState for updating the state-transition in steps  
+                - Used to mantain the Data in Responsive manner based on state transition so that, the 'DispatchAction' aka 'Dispatch' method for State Update need not be called again-and-again instead it will be executed based on the State-Transition COndition  
+                    - State-Transition COndition   
+                        - Conditions those will keep on monitoring the operations those are responsible to perform state transition or state updates
+                            - e.g.
+                                - CALL_INITIALIZED
+                                    - Initial Value for State in Empty
+                                - CALL_SUCCESS
+                                    - The State Value is the data received from Call
+                                - CALL_FAILED
+                                    - The State value is Exception result
+                                - DEFAULT
+                                    - The default value in state when the app is loaded
+            - useReducer(reducer, initialState)
+                - reducer: An object that will be responsible for performing execution for state updates using state stransition
+                - initialState: The Initial State object which has following 3 properties
+                    - Initial-Transition-Condition e.g. loading
+                    - An Actual State Object, which will be updated
+                    - Error property, thsi will be set if the state transition is failed
+            - WHat is reducer function?
+                - Techincally: This is a JavaScrtipt 'pure function'. This means that the input parameters and output  parameters are same.
+                - By Code: This function is used to accept 2 parameters
+                    - Parameter 1: is a state which will be updated
+                    - Parameter 2: is the 'action' that will be dispatched which result into the state update   
+                        - the 'action' is a complex object that has various parameters but one parameter is always mandatory that is known as 'type'    
+                        - the 'type' represents that 'what has happened?'
+                            - e.g. INITIATED, SUCCESS, FAILED, etc.
+                        - the 'payload' parameter is also used for action that represents the data which is to be updated in the state    
+
+2. Error Boundaries
+    - Error Handlign
+    - Still use the Class Component
+3. Code Splitting and Lazy Loading
+    - Peformance
+4. Routing
+    - Single Page Applciation
 
 
 

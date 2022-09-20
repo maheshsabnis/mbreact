@@ -5,6 +5,12 @@ class EmployeeHttpService {
         this.url = "http://localhost:47962/api/Employee";
     }
 
+
+    async getDataDynamic(apiUrl){
+        let response = await axios.get(apiUrl );
+       return response;
+    } 
+
     async getData(){
        let response = await axios.get(this.url);
        return response;  
